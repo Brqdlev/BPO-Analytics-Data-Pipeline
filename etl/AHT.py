@@ -8,9 +8,9 @@ import shutil
 
 load_dotenv()
         # FOLDER PATH
-UPLOAD = Path(r"C:\MyFile\Python\SingleFileETL\UPLOAD")
-RAW = Path(r"C:\MyFile\Python\SingleFileETL\RAW")
-FAILED = Path(r"C:\MyFile\Python\SingleFileETL\FAILED")
+UPLOAD = Path(r"C:\MyFile\Python\SingleFileETL\data\UPLOAD")
+RAW = Path(r"C:\MyFile\Python\SingleFileETL\data\RAW")
+FAILED = Path(r"C:\MyFile\Python\SingleFileETL\data\FAILED")
 
         # MAKE SURE THE FOLDER EXIST
 UPLOAD.mkdir(parents=True, exist_ok=True)
