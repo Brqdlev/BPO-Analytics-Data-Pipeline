@@ -77,38 +77,6 @@ dashboards/BPO Dashboard.pbix
 
 ---
 
-## 📁 Project Structure
-
-```
-project/
-│
-├── data/
-│   ├── raw/
-│   ├── upload/
-│   └── failed/
-│
-├── etl/
-│   ├── AHT.py
-│   ├── CSAT.py
-│   ├── Prod.py
-│   ├── Roster.py
-│   └── SLA.py
-│
-|
-├── dashboards/
-│   └── BPO Dashboard.pbix
-│       
-│
-├── config/
-│   ├── .env
-│   
-│
-├── requirements.txt
-└── README.md
-```
-
----
-
 ## ⚙️ How to Run
 
 ### 1️⃣ Install dependencies
