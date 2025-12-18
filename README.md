@@ -1,109 +1,107 @@
-# End-to-End ETL Pipeline: Excel → Python → PostgreSQL → Power BI
+# BPO Performance Analytics Data Warehouse Project
 
+## 📌 Project Overview
 
-This project demonstrates a complete data workflow starting from multiple Excel flat files, transforming them using Python ETL scripts, storing them in a PostgreSQL Data Warehouse, and finally visualizing the results in Power BI.
+This project showcases a foundational **ETL-based analytics pipeline** built to analyze **Business Process Outsourcing (BPO)** performance metrics.
 
----
-
-## 📊 Tables Included
-
-The pipeline processes **five different datasets**, each stored as separate Excel files:
-
-| Table Name     | Description                                     | File Type |
-|----------------|-------------------------------------------------|-----------|
-| **AHT**        | Average Handle Time performance data            | Excel     |
-| **CSAT**       | Customer Satisfaction scores                    | Excel   
-| **Productivity** | Agent productivity metrics                    | Excel     |
-| **Roster**     | Agent schedule / staffing information           | Excel     |
-| **SLA**        | Service Level Agreement performance             | Excel     |
-
-Each dataset goes through its own dedicated ETL pipeline written in Python.
+The pipeline ingests data from **Excel flat files**, performs basic transformations using **Python**, loads the processed data into **PostgreSQL as a data warehouse**, and delivers insights through **Power BI dashboards**.  
+The project focuses on transforming operational metrics into actionable business insights.
 
 ---
 
-## 🛠️ ETL Process (Python)
+## 🏗️ Architecture
 
-Every table has a **separate ETL script**:
+**High-level flow:**
 
-```
-etl/
-├── AHT.py
-├── CSAT.py
-├── Prod.py
-├── Roster.py
-└── SLA.py
-```
-
-### 🚀 ETL Steps
-1. **Extract** raw Excel data  
-2. **Clean/Transfor** Basic data cleaning and transformation
-4. **Load** the final cleaned dataset into PostgreSQL
-
-Python libraries used:
-
-- `pandas`
-- `sqlalchemy`
-- `psycopg2-binary`
-- `openpyxl`
-- `numpy`
 
 ---
 
-## 🗄️ Data Warehouse (PostgreSQL)
+## 🗂️ Data Sources (BPO Domain)
 
-A PostgreSQL database is used as the **central data warehouse**.
+The dataset represents common **BPO operational and workforce performance metrics**, including:
 
-All 5 tables are loaded into structured relational tables.  
-
-
-```
-
-
-## 📈 Power BI Visualization
-
-After the data is stored in PostgreSQL, Power BI connects directly to the database to build:
-
-- KPIs  
-- Time-series trends  
-- SLA performance  
-- Productivity dashboards  
-- CSAT visualizations  
-- Workforce management insights (Roster)
-
-
-```
-dashboards/BPO Dashboard.pbix
-```
+- **AHT (Average Handle Time)** – Average time to resolve customer interactions  
+- **CSAT (Customer Satisfaction)** – Customer satisfaction scores  
+- **SLA (Service Level Agreement)** – Compliance with service targets  
+- **Productivity** – Agent efficiency and output metrics   
 
 ---
 
-## ⚙️ How to Run
+## 🔄 Data Pipeline Details
 
-### 1️⃣ Install dependencies
-```
-pip install -r requirements.txt
-```
-
-### 2️⃣ Set up environment variables  
-Create a `.env` file using `config_example.env` as a guide (PostgreSQL credentials).
-
-### 3️⃣ Run ETL scripts
-Example:
-```
-python etl/AHT.py
-python etl/CSAT.py
-...
-```
-
-### 4️⃣ Load data into PostgreSQL  
-Ensure your database is running, then the ETL scripts will insert records automatically.
-
-### 5️⃣ Connect Power BI to PostgreSQL  
-Use the **PostgreSQL connector** and build your visual dashboards.
+### 1. Source Data – Flat Files
+- Excel spreadsheets used as the raw data source
+- Simulates real-world reporting and operational exports
+- Multiple metrics across different time periods and teams
 
 ---
 
-## 📬 Contact
+### 2. Python ETL
+- Extracts data from Excel files
+- Performs basic transformations:
+  - Data cleaning and formatting
+  - Column renaming and standardization
+- Loads transformed data into PostgreSQL
 
-If you have questions or want to collaborate, feel free to reach out!
+---
+
+### 3. PostgreSQL – Data Warehouse
+- Centralized storage for analytics
+- Structured tables optimized for reporting
+- Acts as the single source of truth
+- Enables SQL-based analysis and BI integration
+
+---
+
+## 📊 Business Intelligence (Power BI)
+
+- Power BI connected directly to PostgreSQL
+- Dashboards provide visibility into:
+  - Operational performance trends
+  - SLA compliance
+  - Customer satisfaction metrics
+  - Workforce productivity
+- Designed for managers and operations stakeholders
+
+---
+
+## 🛠️ Tech Stack Summary
+
+| Layer | Tools |
+|-----|------|
+| Data Source | Excel (Flat Files) |
+| ETL | Python |
+| Data Warehouse | PostgreSQL |
+| BI | Power BI |
+| Programming | Python, SQL |
+
+---
+
+## 🎯 Key Learnings & Outcomes
+
+- Built a complete **ETL pipeline** from flat files
+- Designed a basic **data warehouse schema**
+- Gained hands-on experience with **PostgreSQL**
+- Created **business-focused dashboards**
+- Translated operational metrics into actionable insights
+
+---
+
+## 🚀 Future Improvements
+
+- Automate file ingestion
+- Add incremental loads
+- Introduce data quality checks
+- Implement dimensional modeling (star schema)
+- Add historical snapshotting for trend analysis
+
+---
+
+## 📎 Author
+
+**Bradley Alojado**  
+Soon to be Data Engineer / Analytics Engineer  
+Portfolio Project #1
+
+---
 
