@@ -100,7 +100,7 @@ The dataset represents common **BPO operational and workforce performance metric
 ## 📎 Author
 
 **Bradley Alojado**  
-BI Developer and soon to be Data Engineer / Analytics Engineer  
+BI Developer | Analytics Engineer - Data Engineer  
 Portfolio Project #1
 
 ---
